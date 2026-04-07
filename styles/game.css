@@ -1,1 +1,133 @@
+:root {
+  --light-off: #333;
+  --yellow: #ffc107;
+  --green: #00ff88;
+}
 
+/* Base */
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  overflow-x: hidden;
+  background: black;
+}
+
+/* ✅ BACKGROUND IMAGE (BOTTOM LAYER) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+
+  background: url("../images/dragstrip.jpg") no-repeat center center / cover;
+
+  /* lighter filter so it’s visible */
+  filter: brightness(0.8) contrast(1.2);
+}
+
+/* ✅ ANIMATED TRACK (MIDDLE LAYER) */
+.track {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.08) 0px,
+      rgba(255,255,255,0.08) 40px,
+      transparent 40px,
+      transparent 80px
+    );
+
+  animation: moveTrack 0.6s linear infinite;
+}
+
+/* CENTER LINE */
+.track::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 200%;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      white 0px,
+      white 40px,
+      transparent 40px,
+      transparent 80px
+    );
+
+  animation: moveTrack 0.6s linear infinite;
+}
+
+/* ✅ LIGHT OVERLAY (TOP BUT TRANSPARENT) */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background: rgba(0,0,0,0.4); /* NOT too dark */
+}
+
+/* Animation */
+@keyframes moveTrack {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 80px;
+  }
+}
+
+/* UI PANEL */
+.game-container {
+  backdrop-filter: blur(6px);
+  background: rgba(0,0,0,0.5);
+  padding: 25px;
+  border-radius: 12px;
+}
+
+/* TEXT */
+h2, p, span {
+  text-shadow: 0 0 10px black;
+}
+
+/* TREE */
+#tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+/* LIGHTS */
+.light {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: var(--light-off);
+}
+
+.yellow.active {
+  background: var(--yellow);
+  box-shadow: 0 0 25px var(--yellow);
+}
+
+.green.active {
+  background: var(--green);
+  box-shadow: 0 0 40px var(--green);
+}
+
+/* BUTTONS */
+button:hover {
+  transform: scale(1.05);
+}
