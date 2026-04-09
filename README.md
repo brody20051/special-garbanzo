@@ -112,30 +112,7 @@ Example layout:
 * `aria-live` used for updating reaction time
 * Sufficient color contrast for readability
 
----
-
-##  Validation Links
-
-(Replace with your deployed URL)
-
-* HTML Validator:
-  https://validator.w3.org/nu/?doc=YOUR_DEPLOYED_URL
-
-* WAVE Accessibility Checker:
-  https://wave.webaim.org/report#/YOUR_DEPLOYED_URL
-
----
-
-##  Deployment
-
-This project is deployed using **GitHub Pages** from the `main` branch.
-
-To deploy:
-
-1. Push code to GitHub
-2. Go to repo settings
-3. Enable GitHub Pages (root directory)
-4. Access your live game via the provided URL
+--
 
 ---
 
