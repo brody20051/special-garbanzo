@@ -94,9 +94,9 @@ This line calculates the player’s reaction time using `performance.now()`, whi
 
 ##  Wireframe
 
-Include your wireframe image in `/images/wireframe.png`
+Included in the images folder
 
-Example layout:
+layout:
 
 * Navbar at top
 * Drag tree centered
@@ -109,7 +109,6 @@ Example layout:
 
 * Semantic HTML elements (`header`, `main`, `footer`)
 * Keyboard-accessible controls
-* `aria-live` used for updating reaction time
 * Sufficient color contrast for readability
 
 --
