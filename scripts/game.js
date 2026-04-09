@@ -1,6 +1,6 @@
+import { saveBest, getBest, saveSettings, getSettings } from "./storage.js";
 
-import { saveBest, getBest } from "./storage.js";
-
+const treeContainer = document.getElementById("tree");
 const startBtn = document.getElementById("startBtn");
 const launchBtn = document.getElementById("launchBtn");
 const resetBtn = document.getElementById("resetBtn");
@@ -9,69 +9,113 @@ const statusText = document.getElementById("status");
 const timeDisplay = document.getElementById("time");
 const bestDisplay = document.getElementById("best");
 
-const yellows = document.querySelectorAll(".yellow");
-const green = document.querySelector(".green");
+const form = document.getElementById("settingsForm");
 
+let lights = [];
 let startTime = null;
 let greenLight = false;
 let gameActive = false;
 
-// Load best score
+/* DATA-DRIVEN TREE */
+const treeData = [
+  { type: "pre" },
+  { type: "stage" },
+  { type: "yellow" },
+  { type: "yellow" },
+  { type: "yellow" },
+  { type: "green" }
+];
+
+function renderTree() {
+  treeContainer.innerHTML = "";
+  lights = [];
+
+  treeData.forEach(item => {
+    const div = document.createElement("div");
+    div.classList.add("light");
+    if (item.type === "yellow") div.classList.add("yellow");
+    if (item.type === "green") div.classList.add("green");
+
+    treeContainer.appendChild(div);
+    lights.push(div);
+  });
+}
+
+renderTree();
+
+/* LOAD STORAGE */
 const best = getBest();
 if (best) bestDisplay.textContent = parseFloat(best).toFixed(3);
 
-// Random delay
-function randomDelay() {
-  return Math.random() * 2000 + 1000;
+const settings = getSettings();
+if (settings) {
+  document.getElementById("playerName").value = settings.name;
+  document.getElementById("difficulty").value = settings.mode;
 }
 
-// Event listeners
+/* EVENTS */
 startBtn.addEventListener("click", startGame);
 launchBtn.addEventListener("click", handleLaunch);
 resetBtn.addEventListener("click", resetGame);
 
+/* FORM VALIDATION */
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  const name = document.getElementById("playerName").value;
+  const mode = document.getElementById("difficulty").value;
+
+  saveSettings({ name, mode });
+
+  alert("Settings Saved!");
+});
+
+/* GAME LOGIC */
 function startGame() {
   resetLights();
 
-  statusText.textContent = "Stage... Get Ready";
   launchBtn.disabled = false;
-
   greenLight = false;
   gameActive = true;
   startTime = null;
 
-  let delay = randomDelay();
+  const delay = Math.random() * 2000 + 1000;
 
-  setTimeout(() => activateLight(0), delay);
-  setTimeout(() => activateLight(1), delay + 500);
-  setTimeout(() => activateLight(2), delay + 1000);
-  setTimeout(goGreen, delay + 1500);
-}
+  setTimeout(() => lights[2].classList.add("active"), delay);
 
-function activateLight(index) {
-  yellows[index].classList.add("active");
+  const mode = document.getElementById("difficulty").value;
+
+  if (mode === "pro") {
+    setTimeout(goGreen, delay + 500);
+  } else {
+    setTimeout(() => lights[3].classList.add("active"), delay + 500);
+    setTimeout(() => lights[4].classList.add("active"), delay + 1000);
+    setTimeout(goGreen, delay + 1500);
+  }
 }
 
 function goGreen() {
-  green.classList.add("active");
+  lights[5].classList.add("active");
   greenLight = true;
   startTime = performance.now();
-  statusText.textContent = "GO!!! HIT LAUNCH!";
+  statusText.textContent = "GO!!!";
 }
 
 function handleLaunch() {
   if (!gameActive) return;
 
-  // ❌ Early launch
   if (!greenLight) {
     statusText.textContent = "❌ RED LIGHT!";
-    timeDisplay.textContent = "0.000";
     launchBtn.disabled = true;
     gameActive = false;
     return;
   }
 
-  // ✅ Valid reaction
   const reaction = (performance.now() - startTime) / 1000;
 
   timeDisplay.textContent = reaction.toFixed(3);
@@ -89,25 +133,11 @@ function handleLaunch() {
 
 function resetGame() {
   resetLights();
-
-  statusText.textContent = "Click Start";
   timeDisplay.textContent = "0.000";
-
+  statusText.textContent = "Click Start";
   launchBtn.disabled = true;
-
-  greenLight = false;
-  gameActive = false;
-  startTime = null;
 }
 
 function resetLights() {
-  yellows.forEach(light => light.classList.remove("active"));
-  green.classList.remove("active");
+  lights.forEach(l => l.classList.remove("active"));
 }
-
-// Easter Egg 👀
-console.log("💡 Type 'instantLaunch()' in console...");
-
-window.instantLaunch = function () {
-  goGreen();
-};
