@@ -2,12 +2,12 @@
 
 **Author:** Brody Hilliard
 **Date:** 2026
-**Live Game:** (Add your GitHub Pages link here)
+**Live Game:** https://brody20051.github.io/special-garbanzo/
 **Source Code:** https://github.com/brody20051/special-garbanzo
 
 ---
 
-## 🎮 Project Overview
+##  Project Overview
 
 The **Drag Strip Reaction Game** is a single-page web game that simulates a real drag racing starting tree. The objective is to test the player’s reaction time by launching as quickly as possible after the green light appears.
 
@@ -15,7 +15,7 @@ This project was built using modern web development practices including semantic
 
 ---
 
-## 🧠 Game Objective
+##  Game Objective
 
 React as fast as possible when the green light appears.
 
@@ -26,7 +26,7 @@ React as fast as possible when the green light appears.
 
 ---
 
-## 🕹️ How to Play
+##  How to Play
 
 1. Enter your **name** and select a **mode**:
 
@@ -40,20 +40,20 @@ React as fast as possible when the green light appears.
 
 ---
 
-## ⚙️ Features
+##  Features
 
-* ⏱️ Real-time reaction timing using high-precision JavaScript
-* 🟡 Two game modes: Pro Tree and Sportsman Tree
-* 💾 Best reaction time saved using `localStorage`
-* 🧑 Player settings (name + difficulty) with validation
-* 🎮 Animated drag strip background
-* 📱 Responsive design using Bootstrap 5
-* ♿ Accessibility features (`aria-live`, semantic structure)
-* 🎁 Easter egg hidden in the console
+*  Real-time reaction timing using high-precision JavaScript
+*  Two game modes: Pro Tree and Sportsman Tree
+*  Best reaction time saved using `localStorage`
+*  Player settings (name + difficulty) with validation
+*  Animated drag strip background
+*  Responsive design using Bootstrap 5
+*  Accessibility features (`aria-live`, semantic structure)
+* Easter egg hidden in the console
 
 ---
 
-## 🧱 Technologies Used
+##  Technologies Used
 
 * HTML5 (semantic structure)
 * CSS3 (custom styles, animations, variables)
@@ -64,7 +64,7 @@ React as fast as possible when the green light appears.
 
 ---
 
-## 🧩 Code Explanation
+##  Code Explanation
 
 ```javascript
 const reaction = (performance.now() - startTime) / 1000;
@@ -74,7 +74,7 @@ This line calculates the player’s reaction time using `performance.now()`, whi
 
 ---
 
-## 🗂️ Project Structure
+##  Project Structure
 
 ```
 /root
@@ -92,7 +92,7 @@ This line calculates the player’s reaction time using `performance.now()`, whi
 
 ---
 
-## 🖼️ Wireframe
+##  Wireframe
 
 Include your wireframe image in `/images/wireframe.png`
 
@@ -105,7 +105,7 @@ Example layout:
 
 ---
 
-## ♿ Accessibility
+##  Accessibility
 
 * Semantic HTML elements (`header`, `main`, `footer`)
 * Keyboard-accessible controls
@@ -114,7 +114,7 @@ Example layout:
 
 ---
 
-## 🔗 Validation Links
+##  Validation Links
 
 (Replace with your deployed URL)
 
@@ -126,7 +126,7 @@ Example layout:
 
 ---
 
-## 🚀 Deployment
+##  Deployment
 
 This project is deployed using **GitHub Pages** from the `main` branch.
 
@@ -139,7 +139,7 @@ To deploy:
 
 ---
 
-## 🧪 Known Issues / Future Improvements
+##  Known Issues / Future Improvements
 
 * Add sound effects (engine + tree)
 * Add leaderboard or history tracking
@@ -148,7 +148,7 @@ To deploy:
 
 ---
 
-## 🎯 Summary
+##  Summary
 
 This project demonstrates:
 
@@ -160,4 +160,4 @@ This project demonstrates:
 
 ---
 
-🔥 Built to simulate real drag racing reaction timing in a fun and interactive way.
+.
