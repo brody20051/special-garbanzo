@@ -1,9 +1,9 @@
 # 🏁 Drag Strip Reaction Game
 
-**Author:** Your Name
+**Author:** Brody Hilliard
 **Date:** 2026
 **Live Game:** (Add your GitHub Pages link here)
-**Source Code:** (Add your GitHub repo link here)
+**Source Code:** https://github.com/brody20051/special-garbanzo
 
 ---
 
