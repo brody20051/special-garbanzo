@@ -16,7 +16,7 @@ let startTime = null;
 let greenLight = false;
 let gameActive = false;
 
-/* DATA-DRIVEN TREE */
+/* tree */
 const treeData = [
   { type: "pre" },
   { type: "stage" },
