@@ -4,7 +4,7 @@
   --green: #00ff88;
 }
 
-/* Base */
+/* Body */
 body {
   margin: 0;
   font-family: 'Orbitron', sans-serif;
@@ -26,7 +26,7 @@ body::before {
   filter: brightness(0.8) contrast(1.2);
 }
 
-/* ✅ ANIMATED TRACK (MIDDLE LAYER) */
+/* track background */
 .track {
   position: fixed;
   inset: 0;
@@ -45,7 +45,7 @@ body::before {
   animation: moveTrack 0.6s linear infinite;
 }
 
-/* CENTER LINE */
+/* track */
 .track::after {
   content: "";
   position: absolute;
@@ -67,7 +67,7 @@ body::before {
   animation: moveTrack 0.6s linear infinite;
 }
 
-/* ✅ LIGHT OVERLAY (TOP BUT TRANSPARENT) */
+/* overlay */
 body::after {
   content: "";
   position: fixed;
@@ -77,7 +77,7 @@ body::after {
   background: rgba(0,0,0,0.4); /* NOT too dark */
 }
 
-/* Animation */
+
 @keyframes moveTrack {
   from {
     background-position: 0 0;
@@ -87,7 +87,7 @@ body::after {
   }
 }
 
-/* UI PANEL */
+
 .game-container {
   backdrop-filter: blur(6px);
   background: rgba(0,0,0,0.5);
@@ -95,12 +95,12 @@ body::after {
   border-radius: 12px;
 }
 
-/* TEXT */
+/* text */
 h2, p, span {
   text-shadow: 0 0 10px black;
 }
 
-/* TREE */
+/*tree */
 #tree {
   display: flex;
   flex-direction: column;
@@ -109,7 +109,7 @@ h2, p, span {
   margin-top: 30px;
 }
 
-/* LIGHTS */
+/* lights */
 .light {
   width: 65px;
   height: 65px;
