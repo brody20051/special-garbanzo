@@ -43,7 +43,7 @@ function renderTree() {
 
 renderTree();
 
-/* LOAD STORAGE */
+/* storage */
 const best = getBest();
 if (best) bestDisplay.textContent = parseFloat(best).toFixed(3);
 
@@ -53,12 +53,12 @@ if (settings) {
   document.getElementById("difficulty").value = settings.mode;
 }
 
-/* EVENTS */
+/* events */
 startBtn.addEventListener("click", startGame);
 launchBtn.addEventListener("click", handleLaunch);
 resetBtn.addEventListener("click", resetGame);
 
-/* FORM VALIDATION */
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -75,7 +75,7 @@ form.addEventListener("submit", (e) => {
   alert("Settings Saved!");
 });
 
-/* GAME LOGIC */
+/* logic */
 function startGame() {
   resetLights();
 
