@@ -44,11 +44,10 @@ React as fast as possible when the green light appears.
 
 *  Real-time reaction timing using high-precision JavaScript
 *  Two game modes: Pro Tree and Sportsman Tree
-*  Best reaction time saved using `localStorage`
+*  Best reaction time saved using localStorage
 *  Player settings (name + difficulty) with validation
 *  Animated drag strip background
 *  Responsive design using Bootstrap 5
-*  Accessibility features (`aria-live`, semantic structure)
 * Easter egg hidden in the console
 
 ---
@@ -59,7 +58,7 @@ React as fast as possible when the green light appears.
 * CSS3 (custom styles, animations, variables)
 * Bootstrap 5 (layout + components)
 * JavaScript (ES Modules)
-* Web Storage API (`localStorage`)
+* Web Storage API (localStorage)
 * Google Fonts
 
 ---
@@ -130,7 +129,6 @@ This project demonstrates:
 
 * Interactive UI design
 * Event-driven JavaScript
-* State management
 * Accessibility best practices
 * Clean, modular code structure
 
