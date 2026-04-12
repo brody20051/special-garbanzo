@@ -7,10 +7,10 @@
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Bootstrap Icons (FOR GITHUB ICON) -->
+  <!-- Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-  <!-- Google Font -->
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles/game.css">
@@ -18,7 +18,6 @@
 
 <body>
 
-<!-- Animated Track -->
 <div class="track"></div>
 
 <header>
@@ -40,22 +39,27 @@
 
   <h2 id="status">Click Start</h2>
 
-  <!-- Drag Tree -->
+  <!-- how to play -->
+  <p class="mt-2">
+    Wait for the green light, then press <strong>LAUNCH</strong> as fast as possible.
+    Launch too early and you’ll get a <strong>red light</strong>.
+  </p>
+
   <div id="tree"></div>
 
-  <!-- Controls -->
   <div class="mt-4">
     <button id="startBtn" class="btn btn-success">Start Race</button>
     <button id="launchBtn" class="btn btn-warning ms-2" disabled>LAUNCH</button>
   </div>
 
-  <!-- Score -->
   <div class="mt-4">
-    <p aria-live="polite">Reaction Time: <span id="time">0.000</span> sec</p>
+    <p aria-live="polite">
+      Reaction Time: <span id="time">0.000</span> sec
+    </p>
     <p>Best Time: <span id="best">--</span></p>
   </div>
 
-  <!-- SETTINGS FORM -->
+  <!-- settings -->
   <form id="settingsForm" class="mt-4">
     <h4>Settings</h4>
 
@@ -83,18 +87,17 @@
         <h5>How to Play</h5>
       </div>
       <div class="modal-body">
-        <p>Wait for the green light, then press LAUNCH as fast as possible.</p>
-        <p>Press too early = RED LIGHT!</p>
+        <p>Wait for green, then hit launch as fast as possible.</p>
+        <p>Early launch = red light.</p>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ✅ FOOTER WITH YOUR GITHUB REPO -->
 <footer class="text-center mt-5">
   <p>
 
-    |
+    <a href="https://github.com/brody20051" target="_blank">Dev Profile</a> |
 
     <a href="https://github.com/brody20051/special-garbanzo" target="_blank">
       <i class="bi bi-github"></i> Game Repo
@@ -115,9 +118,7 @@
   </p>
 </footer>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 <script type="module" src="scripts/game.js"></script>
 
 </body>
